@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/friendwhite.png",
+    "light": "/logo/friendnewlogo.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -21,31 +21,22 @@
       "url": "mailto:hi@mintlify.com"
     }
   ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "Beta",
       "url": "api-reference"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Github",
+      "icon": "github",
+      "url": "https://github.com/BasedHardware/Friend"
     },
     {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "icon": "discord",
+      "url": "https://discord.gg/4qDPurAvHp"
     }
   ],
   "navigation": [
@@ -53,19 +44,24 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "quickstart"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Assembly",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "assembling",
+        "development",
+        "audiotest"
+      ]
+    },
+    {
+      "group": "Info",
+      "pages": [
+        "contribution",
+        "support",
+        "license",
+        "disclaimer"
       ]
     },
     {
@@ -84,8 +80,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/BasedHardware2",
+    "github": "https://github.com/BasedHardware",
+    "linkedin": "https://www.linkedin.com/company/BasedHardware"
   }
 }

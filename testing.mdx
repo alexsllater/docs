@@ -1,0 +1,157 @@
+---
+title: 'Install Firmware'
+description: 'If you purchased an unassembled Friend device or built it yourself using our hardware guide, follow the steps below to flash the firmware:'
+---
+
+<Info>
+  **Important:** If you purchased an assembled device please skip this step
+</Info>
+
+1. Set up nRF Connect by following the tutorial in this video: https://youtu.be/EAJdOqsL9m8
+
+2. In the nRF Connect Extension inside your VS Code, click "Open an existing application" and open the firmware folder from the root of this repo.
+
+<img
+  className="block dark:hidden"
+  src="/images/vscode_extension.png"
+  alt="Hero Light"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/vscode_extension.png"
+  alt="Hero Dark"
+/>
+
+3. In the application panel of the extension, click the "Add Build Configuration" icon.
+
+<img
+  className="block dark:hidden"
+  src="/images/addbuild.png"
+  alt="Hero Light"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/addbuild.png"
+  alt="Hero Dark"
+/>
+
+4. Choose the board as "xiao_ble_sense" and select the configuration as "prj.conf". Then, click "Build Configuration".
+
+<img
+  className="block dark:hidden"
+  src="/images/build_settings.png"
+  alt="Hero Light"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/build_settings.png"
+  alt="Hero Dark"
+/>
+
+5. Once the build succeeds, you will find the zephyr.uf2 file in the firmware/build/zephyr directory.
+
+6. Double-click on the reset button of the device. The device will appear on your computer as a disk. Drag and drop the zephyr.uf2 file into it.
+
+<Info>
+  **Note:** On a Mac, you might see an error message after dropping the file, indicating that the process did not complete. This is just a Mac-specific error; the firmware is successfully uploaded.
+</Info>
+
+<img
+  className="block dark:hidden"
+  src="/images/pinout.jpg"
+  alt="Hero Light"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/pinout.jpg"
+  alt="Hero Dark"
+/>
+
+That's it! You have successfully installed the firmware on your device.
+
+<CodeGroup>
+
+```bash npm
+npm i -g mintlify
+```
+
+```bash yarn
+yarn global add mintlify
+```
+
+</CodeGroup>
+
+Step 2. Go to the docs are located (where you can find `mint.json`) and run the following command:
+
+```bash
+mintlify dev
+```
+
+The documentation website is now available at `http://localhost:3000`.
+
+### Custom Ports
+
+Mintlify uses port 3000 by default. You can use the `--port` flag to customize the port Mintlify runs on. For example, use this command to run in port 3333:
+
+```bash
+mintlify dev --port 3333
+```
+
+You will see an error like this if you try to run Mintlify in a port that's already taken:
+
+```md
+Error: listen EADDRINUSE: address already in use :::3000
+```
+
+## Mintlify Versions
+
+Each CLI is linked to a specific version of Mintlify. Please update the CLI if your local website looks different than production.
+
+<CodeGroup>
+
+```bash npm
+npm i -g mintlify@latest
+```
+
+```bash yarn
+yarn global upgrade mintlify
+```
+
+</CodeGroup>
+
+## Deployment
+
+<Tip>
+  Unlimited editors available under the [Startup
+  Plan](https://mintlify.com/pricing)
+</Tip>
+
+You should see the following if the deploy successfully went through:
+
+<Frame>
+  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+## Troubleshooting
+
+Here's how to solve some common problems when working with the CLI.
+
+<AccordionGroup>
+  <Accordion title="Mintlify is not loading">
+    Update to Node v18. Run `mintlify install` and try again.
+  </Accordion>
+  <Accordion title="No such file or directory on Windows">
+Go to the `C:/Users/Username/.mintlify/` directory and remove the `mint`
+folder. Then Open the Git Bash in this location and run `git clone
+https://github.com/mintlify/mint.git`.
+
+Repeat step 3.
+
+  </Accordion>
+  <Accordion title="Getting an unknown error">
+    Try navigating to the root of your device and delete the ~/.mintlify folder.
+    Then run `mintlify dev` again.
+  </Accordion>
+</AccordionGroup>
+
+Curious about what changed in a CLI version? [Check out the CLI changelog.](/changelog/command-line)
